@@ -1,0 +1,46 @@
+{
+	"name": "ExStream Color Scheme",
+	"variables": {
+		// Define variables here
+	},
+	"globals": {
+		"foreground": "",
+		"background": "",
+		"accent": "",
+		"selection": "",
+	},
+	"rules": [
+		{
+			"scope": "keyword",
+			"foreground": "#aff",
+		},
+		{
+			"scope": "constant.numeric",
+			"foreground": "#4ced3b",
+		},
+		{
+			"scope": "text",
+			"foreground": "#a52",
+		},
+		{
+			"scope": "set",
+			"foreground": "#ae3bed",
+		},
+		{
+			"scope": "meta",
+			"foreground": "#4286f4",
+		},
+		{
+			"scope": "constant.numeric punctuation",
+			"foreground": "#ed3b3b",
+		},
+		{
+			"scope": "inOut",
+			"foreground": "#dd8b27",
+		},
+		{
+			"scope": "symbol",
+			"foreground": "#2b91e5",
+		},
+	]
+}

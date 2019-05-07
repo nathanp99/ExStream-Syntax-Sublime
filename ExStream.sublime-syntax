@@ -1,0 +1,57 @@
+%YAML 1.2
+---
+name: ExStream
+scope: source.ExStream
+file_extensions: [ spl ]
+
+contexts:
+  main:
+    - match: '( \- )'
+      captures:
+        0: constant.other.symbol.ExStream
+    - match: '(\+)'
+      captures:
+        0: constant.other.symbol.ExStream
+    - match: '(\*)'
+      captures:
+        0: constant.other.symbol.ExStream
+    - match: '(\$.*)'
+      captures:
+        0: comment.ExStream
+    - match: '(set)'
+      captures:
+        0: entity.name.class.ExStream
+    - match: '(inStreamCount|pastCount|past)'
+      captures:
+        0: string.ExStream
+    - match: '(s([0-9]*)*)'
+      captures:
+        0: keyword.ExStream
+    - match: '(\.(in|out))'
+      captures:
+        0: entity.name.type.ExStream
+      push:
+        - match: '(([0-9]*)*)'
+          pop: true
+          captures:
+            0: constant.language.ExStream
+        - match: '(\\(?:\\|"))'
+          captures:
+            0: text.ExStream
+        - match: '(.)'
+          captures:
+            0: text.ExStream
+    - include: numeric
+    - match: '(.)'
+      captures:
+        0: text.ExStream
+  numeric:
+    - match: '(\b\d+)'
+      captures:
+        0: constant.numeric.ExStream
+    - match: '((\-)?\d+)'
+      captures:
+        0: constant.numeric.ExStream
+    - match: '(.)'
+      captures:
+        0: text.ExStream
